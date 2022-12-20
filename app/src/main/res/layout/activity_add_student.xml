@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddStudentActivity">
+
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="287dp"
+        android:layout_height="261dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar" />
+
+    <TextView
+        android:id="@+id/name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Name:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar" />
+
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_width="271dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="name"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/name_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/name_text_view" />
+
+    <TextView
+        android:id="@+id/id_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="id:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_text_view" />
+
+    <EditText
+        android:id="@+id/id_input"
+        android:layout_width="267dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="id"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/id_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/id_text" />
+
+
+    <TextView
+        android:id="@+id/phone_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="168dp"
+        android:text="Phone:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar" />
+
+    <EditText
+        android:id="@+id/phone_input"
+        android:layout_width="267dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="phone"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/phone_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/id_text" />
+
+    <TextView
+        android:id="@+id/address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="180dp"
+        android:text="Address:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_text_view" />
+
+    <EditText
+        android:id="@+id/address_input"
+        android:layout_width="264dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="address"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/address_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/id_text" />
+
+    <CheckBox
+        android:id="@+id/student_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="184dp"
+        android:text="Checked"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_text" />
+
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:layout_width="111dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="16dp"
+        android:text="CANCEL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="111dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="90dp"
+        android:text="SAVE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/cancel_btn"
+        app:layout_constraintTop_toTopOf="@+id/cancel_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
