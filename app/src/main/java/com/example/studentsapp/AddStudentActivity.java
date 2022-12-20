@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,42 +20,48 @@ public class AddStudentActivity extends AppCompatActivity {
     EditText phoneEt;
     EditText addressEt;
     CheckBox cb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
 
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("New Student");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("New Student");
 
-            nameEt = findViewById(R.id.name_input);
-            idEt = findViewById(R.id.id_input);
-            phoneEt = findViewById(R.id.phone_input);
-            addressEt = findViewById(R.id.address_input);
-            cb = findViewById(R.id.student_cb);
+        nameEt = findViewById(R.id.name_input);
+        idEt = findViewById(R.id.id_input);
+        phoneEt = findViewById(R.id.phone_input);
+        addressEt = findViewById(R.id.address_input);
+        cb = findViewById(R.id.student_cb);
 
-            Button cancelBtn = findViewById(R.id.cancel_btn);
-            Button saveBtn = findViewById(R.id.save_btn);
+        Button cancelBtn = findViewById(R.id.cancel_btn);
+        Button saveBtn = findViewById(R.id.save_btn);
 
-            cancelBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(AddStudentActivity.this, MainActivity.class);
-                    startActivity(intent);
-                }
-            });
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddStudentActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
-            saveBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Student editedStudent = new Student(nameEt.getText().toString(),idEt.getText().toString(), phoneEt.getText().toString(), addressEt.getText().toString(),cb.isChecked());
-                    Model.instance.addStudent(editedStudent);
-                    Intent intent = new Intent(AddStudentActivity.this, MainActivity.class);
-                    startActivity(intent);
-                }
-            });
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Student editedStudent = new Student(nameEt.getText().toString(),idEt.getText().toString(), phoneEt.getText().toString(), addressEt.getText().toString(),cb.isChecked());
+                Model.instance.addStudent(editedStudent);
+                Intent intent = new Intent(AddStudentActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 
-
-
+    // Back button in the title bar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        return true;
     }
 }

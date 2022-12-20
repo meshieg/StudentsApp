@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -31,13 +32,12 @@ public class EditStudentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_student);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Student Edit");
+        getSupportActionBar().setTitle("Edit Student");
 
         data = Model.instance.getAllStudents();
 
         Bundle b = getIntent().getExtras();
         position = b.getInt("id");
-
 
         student = data.get(position);
 
@@ -84,6 +84,13 @@ public class EditStudentActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
+    // Back button in the title bar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        return true;
     }
 }
